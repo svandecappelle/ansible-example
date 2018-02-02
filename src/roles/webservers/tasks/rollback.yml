@@ -1,4 +1,4 @@
 ---
 - name: Rollback general procedure
-  command: echo "rollbacked"
-  debug: msg="Procedure rollbacked"
+  command: echo "Installation was rollbacked by not expected error"
+- debug: msg="Installation was rollbacked by not expected error"

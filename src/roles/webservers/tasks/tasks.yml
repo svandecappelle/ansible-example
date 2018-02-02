@@ -12,5 +12,5 @@
     - name:
       command: echo Configure
   rescue:
-    - command: echo 'rollback'
-    - debug: msg='rescue mode on'
+    - command: echo "Rollback configure"
+    - debug: msg='Rescue mode on configure'

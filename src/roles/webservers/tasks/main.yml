@@ -1,12 +1,16 @@
 ---
 - block:
-    - debug: msg='toto'
+    - debug: msg='Check current configuration'
+    # configure
+    - include: tasks.yml
+    - include: tasks-without-rescue.yml
     - block:
-        - debug: msg='tutu'
-        - include: tasks.yml
+        # Testing install
+        - debug: msg='Launch install'
         - command: /bin/false
-        - debug: msg='titi'
+        # task would failed before
+        - debug: msg='Normally not executed'
       rescue:
-        - debug: msg='tata'
+        - debug: msg='Rescue on install'
   rescue:
     - include: rollback.yml
