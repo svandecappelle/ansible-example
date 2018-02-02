@@ -1,5 +1,12 @@
 ---
 - block:
-    - include: tasks.yml
+    - debug: msg='toto'
+    - block:
+        - debug: msg='tutu'
+        - include: tasks.yml
+        - command: /bin/false
+        - debug: msg='titi'
+      rescue:
+        - debug: msg='tata'
   rescue:
     - include: rollback.yml

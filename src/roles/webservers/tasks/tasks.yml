@@ -1,13 +1,16 @@
-- name: Check accessible
-  action: ping
-
-- name: Test already installed
-  file:
-    path: "{{ item }}"
-    state: directory
-  with_items:
-    - "{{ tmp_path }}"
-    - /toto
-
-- name:
-  command: echo Configure
+---
+- block:
+    - name: Test already installed
+      file:
+        path: "{{ item }}"
+        state: directory
+      with_items:
+        - "{{ tmp_path }}"
+        - /toto
+    - name: Check accessible
+      action: ping
+    - name:
+      command: echo Configure
+  rescue:
+    - command: echo 'rollback'
+    - debug: msg='rescue mode on'

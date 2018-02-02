@@ -1,5 +1,4 @@
 ---
-- name: Rollback procedure
+- name: Rollback general procedure
   command: echo "rollbacked"
-  # debug:
-    # msg: "Procedure rollbacked"
+  debug: msg="Procedure rollbacked"
