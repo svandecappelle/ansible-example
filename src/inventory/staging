@@ -1,0 +1,15 @@
+[webservers]
+127.0.0.1
+
+[webservers:vars]
+ansible_user=svandeca
+ansible_connection=ssh
+scp_if_ssh=True:q
+
+[dbservers]
+127.0.0.1
+
+[dbservers:vars]
+ansible_user=svandeca
+ansible_connection=ssh
+scp_if_ssh=True
