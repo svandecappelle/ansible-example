@@ -1,0 +1,13 @@
+---
+- name: Check accessible
+  action: ping
+
+- name: Test already installed
+  file:
+    path: "{{ item }}"
+    state: directory
+  with_items:
+    - "{{ tmp_path }}"
+
+- name:
+  command: echo Configure
